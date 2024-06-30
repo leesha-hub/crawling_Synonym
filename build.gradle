@@ -1,0 +1,49 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starter Web for RESTful API
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Spring Boot Starter JDBC for MySQL database connection
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // MySQL Connector for MySQL database connection
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    // Lombok for reducing boilerplate code
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Testing dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Add this line to include org.json library
+    implementation 'org.json:json:20231013'
+
+    // Add Jackson dependency  d
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+
+    implementation 'org.jsoup:jsoup:1.14.3'
+
+    // Selenium Java Dependency
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.2'
+
+    // WebDriverManager for managing drivers
+    implementation 'io.github.bonigarcia:webdrivermanager:5.0.3'
+}
+
+test {
+    useJUnitPlatform()
+}
